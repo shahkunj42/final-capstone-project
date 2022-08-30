@@ -1,0 +1,2 @@
+class CaligraphiesController < ApplicationController
+end

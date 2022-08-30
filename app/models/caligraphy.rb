@@ -1,0 +1,2 @@
+class Caligraphy < ApplicationRecord
+end
