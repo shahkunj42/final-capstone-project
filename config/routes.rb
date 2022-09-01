@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :orders 
   resources :blogs
   resources :reviews
-  resources :images
   resources :caligraphies
   resources :posters
   resources :admins
