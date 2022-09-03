@@ -13,7 +13,7 @@ class Admin < ApplicationRecord
   (?=.*[[:^alnum:]]) # Must contain a symbol
 /x
 
-    validates :username, :password, :email :password_confirmation, presence: true, on: :create
+    validates :username, :password, :email, :password_confirmation, presence: true, on: :create
     validates :username, uniqueness: true
     validates :password, format: { with: PASSWORD_REQUIREMENTS }, on: :create 
 

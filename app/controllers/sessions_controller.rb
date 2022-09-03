@@ -18,9 +18,16 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete :customer_id, :admin_id 
-    head :no_content
+    admin = Admin.find_by(username: params[:username])
+    if admin
+      session.delete :admin_id
+      head :no_content
+    else 
+      session.delete :customer_id
+      head :no_content
+    end
   end
+
 
 
 end

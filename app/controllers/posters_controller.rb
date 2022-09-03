@@ -14,7 +14,7 @@ class PostersController < ApplicationController
     end
 
       def create
-        poster = @admin.posters.create!(poster_params)
+        poster = Poster.create!(poster_params)
         render json: poster, status: :created
       end
     
@@ -33,7 +33,7 @@ class PostersController < ApplicationController
       private
       
       def poster_params
-        params.permit(:title, :price, :description, :image)
+        params.permit(:title, :price, :description, :image, :admin_id)
       end
 
 end

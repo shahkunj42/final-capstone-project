@@ -13,27 +13,27 @@ class CaligraphiesController < ApplicationController
         render json: caligraphy
     end
 
-      def create
-        caligraphy = @admin.caligraphies.create!(caligraphy_params)
-        render json: caligraphy, status: :created
-      end
+    def create
+      caligraphy = Caligraphy.create!(caligraphy_params)
+      render json: caligraphy, status: :created
+    end
     
-      def update
-        caligraphy = Caligraphy.find_by(id: params[:id])
-        caligraphy.update(caligraphy_params)
-        render json: caligraphy, status: :accepted 
-      end
+    def update
+      caligraphy = Caligraphy.find_by(id: params[:id])
+      caligraphy.update(caligraphy_params)
+      render json: caligraphy, status: :accepted 
+    end
+  
+    def destroy
+      caligraphy = Caligraphy.find_by(id: params[:id])
+      caligraphy.destroy
+      head :no_content
+    end
+  
+    private
     
-      def destroy
-        caligraphy = Caligraphy.find_by(id: params[:id])
-        caligraphy.destroy
-        head :no_content
-      end
-    
-      private
-      
-      def caligraphy_params
-        params.permit(:title, :price, :description, :image)
-      end
+    def caligraphy_params
+      params.permit(:title, :price, :description, :image, :admin_id)
+    end
 
 end
