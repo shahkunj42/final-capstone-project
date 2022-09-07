@@ -2,6 +2,7 @@ import React from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
 
+
 function Cards() {
   return (
     <div className='cards'>
@@ -10,13 +11,13 @@ function Cards() {
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItem
-              src='pics/custom-cards.jpeg'
+              src='https://i.imgur.com/zpeacNa.jpg'
               text='Custom Cards and Caligraphy'
               label='Caligraphy'
               path='/caligraphy'
             />
             <CardItem
-              src='./arjun-kalgi-wedding-live.jpeg'
+              src='https://i.imgur.com/7QGMcL4.jpg'
               text='Wedding Posters'
               label='Posters'
               path='/posters'
