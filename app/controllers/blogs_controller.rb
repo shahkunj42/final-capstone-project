@@ -13,7 +13,7 @@ class BlogsController < ApplicationController
     end
 
       def create
-        blog = @admin.blogs.create!(blog_params)
+        blog = Blog.create!(blog_params)
         render json: blog, status: :created
       end
     
@@ -32,6 +32,6 @@ class BlogsController < ApplicationController
       private
       
       def blog_params
-        params.permit(:title, :content, :header_image)
+        params.permit(:title, :content, :header_image, :admin_id)
       end
 end

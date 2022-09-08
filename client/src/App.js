@@ -14,6 +14,7 @@ import Caligraphies from './components/pages/Caligraphies';
 import Posters from './components/pages/Posters';
 import CaligraphyDetail from './components/pages/CaligraphyDetail';
 import PosterDetail from './components/pages/PosterDetail';
+import Administration from './components/pages/Administration';
 
 function App() {
   const[admin, setAdmin] = useState(null)
@@ -44,26 +45,52 @@ function App() {
   useEffect(() => fetch('/posters').then(r => r.json()).then(data => setPosters(data)), [])
   useEffect(() => fetch('/blogs').then(r => r.json()).then(data => setBlogs(data)), [])
 
+
+  if(!admin){
   return (
     <div className="App">
       <Router>
-      <Navbar user={user}/>
+      <Navbar user={user} admin={admin}/>
         <Routes>
           <Route exact path="/" element={<Home user={user}/>} />
-          <Route path='/blogs' element={<Blogs blogs={blogs}/>} />
+          <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin}/>} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
           <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
           <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
           <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
-          <Route path='/caligraphies/:id' element={<CaligraphyDetail />} />
+          <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin}/>} />
           <Route path='/posters' element={<Posters  posters={posters} />} />
-          <Route path='/posters/:id' element={<PosterDetail />} />
+          <Route path='/posters/:id' element={<PosterDetail admin={admin}/>} />
         </Routes>
       <Footer />
       </Router>
     </div>
   );
+  }
+  else{
+    return (
+      <div className="App">
+        <Router>
+        <Navbar user={user} admin={admin}/>
+          <Routes>
+            <Route exact path="/" element={<Home user={user}/>} />
+            <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin}/>} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
+            <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
+            <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
+            <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
+            <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin}/>} />
+            <Route path='/posters' element={<Posters  posters={posters} />} />
+            <Route path='/posters/:id' element={<PosterDetail admin={admin}/>} />
+            <Route path='/administration' element={<Administration admin={admin} caligraphies={caligraphies} blogs={blogs} posters={posters} setBlogs={setBlogs} setCaligraphies={setCaligraphies} setPosters={setPosters} />} />
+          </Routes>
+        <Footer />
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
