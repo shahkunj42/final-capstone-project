@@ -1,8 +1,10 @@
 import React from 'react'
+import BlogsContainer from '../BlogsContiner'
 
-function Blogs() {
+function Blogs({blogs}) {
+  let blogList = blogs.map(blog => <BlogsContainer key={blog.id} blog={blog}/>)
   return (
-    <div>Blogs</div>
+    <div>{blogList}</div>
   )
 }
 

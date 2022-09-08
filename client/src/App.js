@@ -12,12 +12,15 @@ import SignIn from './components/pages/SignIn'
 import LogOut from './components/pages/LogOut';
 import Caligraphies from './components/pages/Caligraphies';
 import Posters from './components/pages/Posters';
+import CaligraphyDetail from './components/pages/CaligraphyDetail';
+import PosterDetail from './components/pages/PosterDetail';
 
 function App() {
   const[admin, setAdmin] = useState(null)
   const[user, setUser] = useState(null)
   const[caligraphies, setCaligraphies]= useState([])
   const[posters, setPosters] = useState([])
+  const[blogs, setBlogs] = useState([])
 
   useEffect(() => {
     fetch("/me")
@@ -39,6 +42,7 @@ function App() {
 
   useEffect(() => fetch('/caligraphies').then(r => r.json()).then(data => setCaligraphies(data)), [])
   useEffect(() => fetch('/posters').then(r => r.json()).then(data => setPosters(data)), [])
+  useEffect(() => fetch('/blogs').then(r => r.json()).then(data => setBlogs(data)), [])
 
   return (
     <div className="App">
@@ -46,13 +50,15 @@ function App() {
       <Navbar user={user}/>
         <Routes>
           <Route exact path="/" element={<Home user={user}/>} />
-          <Route path='/blogs' element={<Blogs />} />
+          <Route path='/blogs' element={<Blogs blogs={blogs}/>} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
           <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
           <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
           <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
+          <Route path='/caligraphies/:id' element={<CaligraphyDetail />} />
           <Route path='/posters' element={<Posters  posters={posters} />} />
+          <Route path='/posters/:id' element={<PosterDetail />} />
         </Routes>
       <Footer />
       </Router>

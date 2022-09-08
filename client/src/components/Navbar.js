@@ -26,7 +26,7 @@ function Navbar({user}) {
         <nav className='navbar'>
             <div className='navbar-container'>
                 <Link to='/' className='navbar-logo'>
-                    Designs By Shai <i className='fab fa-typo3' />
+                    Designs By Shai <i className="fa-solid fa-spa" />
                 </Link>
                 <div className='menu-icon' onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
