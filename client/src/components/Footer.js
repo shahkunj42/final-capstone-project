@@ -22,64 +22,11 @@ function Footer() {
         <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
             <h2>Social Media</h2>
-            <a href="https://www.instagram.com/shaiontheway/">Instagram</a>
-            <a href='https://www.facebook.com/shaili.shah.27'>Facebook</a>
+            <a href="https://www.instagram.com/shaiontheway/">Instagram <i className='fab fa-instagram' /> </a>
+            <a href='https://www.facebook.com/shaili.shah.27'>Facebook <i className='fab fa-facebook-f' /></a>
           </div>
         </div>
       </div>
-      <section className='social-media'>
-        <div className='social-media-wrap'>
-          <div className='footer-logo'>
-            <Link to='/' className='social-logo'>
-              TRVL
-              <i className='fab fa-typo3' />
-            </Link>
-          </div>
-          <small className='website-rights'>TRVL © 2020</small>
-          <div className='social-icons'>
-            <Link
-              className='social-icon-link facebook'
-              to='/'
-              target='_blank'
-              aria-label='Facebook'
-            >
-              <i className='fab fa-facebook-f' />
-            </Link>
-            <Link
-              className='social-icon-link instagram'
-              to='/'
-              target='_blank'
-              aria-label='Instagram'
-            >
-              <i className='fab fa-instagram' />
-            </Link>
-            <Link
-              className='social-icon-link youtube'
-              to='/'
-              target='_blank'
-              aria-label='Youtube'
-            >
-              <i className='fab fa-youtube' />
-            </Link>
-            <Link
-              className='social-icon-link twitter'
-              to='/'
-              target='_blank'
-              aria-label='Twitter'
-            >
-              <i className='fab fa-twitter' />
-            </Link>
-            <Link
-              className='social-icon-link twitter'
-              to='/'
-              target='_blank'
-              aria-label='LinkedIn'
-            >
-              <i className='fab fa-linkedin' />
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

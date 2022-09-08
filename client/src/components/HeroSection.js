@@ -3,7 +3,9 @@ import '../App.css'
 import { Button } from './Button'
 import './HeroSection.css'
 
-function HeroSection() {
+function HeroSection({user}) {
+
+  if (!user){
   return (
     <div className='hero-container'>
         <h1>DESIGNS BY SHAI</h1>
@@ -14,6 +16,15 @@ function HeroSection() {
         </div>
     </div>
   )
+  }
+  else{
+  return (
+    <div className='hero-container'>
+        <h1>DESIGNS BY SHAI</h1>
+        <p>You Dream it We can Make it</p>
+    </div>
+    )
+  }
 }
 
 export default HeroSection

@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   post "/signup", to: "customers#create"
   get "/me", to: "customers#show"
-  post "/admin_create", to: "admin#create"
-  get "/administration", to: "admin#show"
+  post "/admin_create", to: "admins#create"
+  get "/administration", to: "admins#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 

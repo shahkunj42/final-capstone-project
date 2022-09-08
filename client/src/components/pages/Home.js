@@ -5,12 +5,11 @@ import Footer from '../Footer';
 import HeroSection from '../HeroSection';
 
 
-function Home() {
+function Home({user}) {
   return (
     <>
-      <HeroSection />
+      <HeroSection user={user}/>
       <Cards />
-      <Footer />
     </>
   );
 }

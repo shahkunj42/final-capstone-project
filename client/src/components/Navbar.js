@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import './Navbar.css';
 import { Button } from './Button';
 
-function Navbar() {
+function Navbar({user}) {
     const [click, setClick] = useState(false)
     const [button, setButton] = useState(true)
 
@@ -49,8 +49,8 @@ function Navbar() {
                     </li>
                 </ul>
                 {button && <Button buttonStyle='btn--outline'>
-                    <Link to='/sign-up' className='btn-mobile'>
-                        SIGN UP
+                    <Link to={user ? 'log-out' : '/sign-up'} className='btn-mobile'>
+                        {user ? `Hello ${user.username}`: 'SIGN UP'}
                     </Link>
                     </Button>}
             </div>

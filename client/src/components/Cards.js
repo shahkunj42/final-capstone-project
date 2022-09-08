@@ -14,7 +14,7 @@ function Cards() {
               src='https://i.imgur.com/zpeacNa.jpg'
               text='Custom Cards and Caligraphy'
               label='Caligraphy'
-              path='/caligraphy'
+              path='/caligraphies'
             />
             <CardItem
               src='https://i.imgur.com/7QGMcL4.jpg'
