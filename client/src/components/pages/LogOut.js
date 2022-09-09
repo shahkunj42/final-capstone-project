@@ -12,8 +12,8 @@ function LogOut({setUser, setAdmin}) {
             setUser(null)
             setAdmin(null);
             }
-        });
-        navigate('/')
+        })
+        .then(navigate('/'))
     }
     
   return (

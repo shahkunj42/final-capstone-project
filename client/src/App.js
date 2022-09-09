@@ -45,6 +45,22 @@ function App() {
   useEffect(() => fetch('/posters').then(r => r.json()).then(data => setPosters(data)), [])
   useEffect(() => fetch('/blogs').then(r => r.json()).then(data => setBlogs(data)), [])
 
+  function handleDeleteBlog(blogToDeleteId) {
+    const updateBlog = blogs.filter((id) => id !== blogToDeleteId);
+    setBlogs(updateBlog);
+  }
+
+  function handleDeletePoster(posterToDeleteId) {
+    const updatePosters = posters.filter((id) => id !== posterToDeleteId);
+    setBlogs(updatePosters);
+  }
+
+  function handleDeleteCaligraphy(caligraphy){
+    const updatedCalig = caligraphies.filter((id) => id !== caligraphy)
+    setCaligraphies(updatedCalig)
+  }
+
+
 
   if(!admin){
   return (
@@ -75,15 +91,15 @@ function App() {
         <Navbar user={user} admin={admin}/>
           <Routes>
             <Route exact path="/" element={<Home user={user}/>} />
-            <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin}/>} />
+            <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin} handleDeleteBlog={handleDeleteBlog}/>} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
             <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
             <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
             <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
-            <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin}/>} />
+            <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin} handleDeleteCaligraphy={handleDeleteCaligraphy}/>} />
             <Route path='/posters' element={<Posters  posters={posters} />} />
-            <Route path='/posters/:id' element={<PosterDetail admin={admin}/>} />
+            <Route path='/posters/:id' element={<PosterDetail admin={admin} handlePosterDelete={handleDeletePoster}/>} />
             <Route path='/administration' element={<Administration admin={admin} caligraphies={caligraphies} blogs={blogs} posters={posters} setBlogs={setBlogs} setCaligraphies={setCaligraphies} setPosters={setPosters} />} />
           </Routes>
         <Footer />
