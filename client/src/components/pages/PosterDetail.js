@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Container, Header } from 'semantic-ui-react'
 import { Image } from 'semantic-ui-react'
 import { Button, Icon } from 'semantic-ui-react'
+import ReviewContainer from '../ReviewContainer';
 
 const PosterDetail = () => {
   const [poster, setPoster] = useState(null);
@@ -32,6 +33,9 @@ const PosterDetail = () => {
                 </Button.Content>
             </Button>
         </Container>
+        <br></br>
+        <h1>Reviews!</h1>
+        <ReviewContainer reviews={poster.reviews} />
         </div>
     )
     }

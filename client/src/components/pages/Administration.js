@@ -1,9 +1,19 @@
 import React from 'react'
+import BlogForm from '../BlogForm'
+import CaligraphyForm from '../CaligraphyForm'
+import PosterForm from '../PosterForm'
 
 function Administration({admin, posters, blogs, caligraphies, setPosters, setCaligraphies, setBlogs}) {
 
   return (
-    <div>Administration</div>
+    <div>
+      <br></br>
+      <BlogForm setBlogs={setBlogs}/>
+      <br></br>
+      <CaligraphyForm setCaligraphies={setCaligraphies}/>
+      <br></br>
+      <PosterForm setPosters={setPosters}/>
+    </div>
   )
 }
 
