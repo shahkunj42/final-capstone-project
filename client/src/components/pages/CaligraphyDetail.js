@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { Container, Header } from 'semantic-ui-react'
 import { Image } from 'semantic-ui-react'
 import { Button, Icon } from 'semantic-ui-react'
-import { useNavigate } from 'react-router-dom'
+import ReviewContainer from '../ReviewContainer';
 
 const CaligraphyDetail = ({admin, handleDeleteCaligraphy}) => {
   const [caligraphy, setCaligraphy] = useState(null);
@@ -31,7 +31,7 @@ const CaligraphyDetail = ({admin, handleDeleteCaligraphy}) => {
 
   if(!caligraphy) return <h1>Loading</h1>
 
-  else if(!admin){
+  else if(user){
   return(
     <div>
     <Container text>
@@ -40,12 +40,15 @@ const CaligraphyDetail = ({admin, handleDeleteCaligraphy}) => {
         <p>{caligraphy.description}</p>
         <h3>$ {caligraphy.price}</h3>
         <Button animated='fade' size='massive' attached='bottom'>
-            <Button.Content hidden>Add to Cart</Button.Content>
+            <Button.Content hidden>If interested Click Here To Inquire</Button.Content>
             <Button.Content visible>
-                <Icon name='shop' />
+                Inquire <Icon name='comment alternate outline' />
             </Button.Content>
         </Button>
     </Container>
+      <br></br>
+        <h1>Reviews!</h1>
+        <ReviewContainer reviews={caligraphy.reviews} />
     </div>
   )
   }
@@ -63,9 +66,35 @@ const CaligraphyDetail = ({admin, handleDeleteCaligraphy}) => {
                 <Icon name='trash alternate' />
             </Button.Content>
         </Button>
-    </Container>
+      </Container>
+        <br></br>
+        <h1>Reviews!</h1>
+        <ReviewContainer reviews={caligraphy.reviews} />
     </div>
   )
+  }
+  else {
+    return(
+      <div>
+      <Container text>
+          <Image src={caligraphy.image_url} fluid />
+          <Header as='h2'>{caligraphy.title}</Header>
+          <p>{caligraphy.description}</p>
+          <h3>$ {caligraphy.price}</h3>
+          <Link to='/sign-in'>
+          <Button animated='fade' size='massive' attached='bottom'>
+              <Button.Content hidden>Sign In To Inquire</Button.Content>
+              <Button.Content visible>
+                  Sign in
+              </Button.Content>
+          </Button>
+          </Link>
+        </Container>
+        <br></br>
+        <h1>Reviews!</h1>
+        <ReviewContainer reviews={caligraphy.reviews} />
+      </div>
+    )
   }
   }
 

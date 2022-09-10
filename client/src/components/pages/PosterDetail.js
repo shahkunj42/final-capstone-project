@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { Container, Header } from 'semantic-ui-react'
 import { Image } from 'semantic-ui-react'
 import { Button, Icon } from 'semantic-ui-react'
 import ReviewContainer from '../ReviewContainer';
-import {useNavigate} from 'react-router-dom'
 
 const PosterDetail = ({admin, handlePosterDelete}) => {
   const [poster, setPoster] = useState(null);
@@ -32,7 +31,7 @@ const PosterDetail = ({admin, handlePosterDelete}) => {
 
   if(!poster) {return(<h1>loading</h1>)}
   
-  else if(!admin){
+  else if(user){
     return(
         <div>
         <Container text>
@@ -41,9 +40,9 @@ const PosterDetail = ({admin, handlePosterDelete}) => {
             <p>{poster.description}</p>
             <h3>$ {poster.price}</h3>
             <Button animated='fade' size='massive' attached='bottom'>
-                <Button.Content hidden>Add to Cart</Button.Content>
+                <Button.Content hidden>Click Here To Inquire</Button.Content>
                 <Button.Content visible>
-                    <Icon name='shop' />
+                    <Icon name='comment alternate outline' />
                 </Button.Content>
             </Button>
         </Container>
@@ -75,5 +74,28 @@ const PosterDetail = ({admin, handlePosterDelete}) => {
         </div>
 
     )}
+    else {
+      return(
+        <div>
+        <Container text>
+            <Image src={poster.image_url} fluid />
+            <Header as='h2'>{poster.title}</Header>
+            <p>{poster.description}</p>
+            <h3>$ {poster.price}</h3>
+            <Link to= '/sign-in'>
+            <Button animated='fade' size='massive' attached='bottom'>
+                <Button.Content hidden>Sign In To Inquire</Button.Content>
+                <Button.Content visible>
+                    Sign in
+                </Button.Content>
+            </Button>
+            </Link>
+        </Container>
+        <br></br>
+        <h1>Reviews!</h1>
+        <ReviewContainer reviews={poster.reviews} />
+        </div>
+    )
+    }
   }
   export default PosterDetail
