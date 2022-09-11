@@ -5,7 +5,7 @@ import { Image } from 'semantic-ui-react'
 import { Button, Icon } from 'semantic-ui-react'
 import ReviewContainer from '../ReviewContainer';
 
-const PosterDetail = ({admin, handlePosterDelete}) => {
+const PosterDetail = ({admin, handlePosterDelete, user}) => {
   const [poster, setPoster] = useState(null);
   const {id} = useParams()
   const navigate = useNavigate()
@@ -40,9 +40,9 @@ const PosterDetail = ({admin, handlePosterDelete}) => {
             <p>{poster.description}</p>
             <h3>$ {poster.price}</h3>
             <Button animated='fade' size='massive' attached='bottom'>
-                <Button.Content hidden>Click Here To Inquire</Button.Content>
-                <Button.Content visible>
-                    <Icon name='comment alternate outline' />
+                <Button.Content visible>Click Here To Inquire</Button.Content>
+                <Button.Content hidden>
+                    Inquire <Icon name='comment alternate outline' />
                 </Button.Content>
             </Button>
         </Container>
@@ -84,8 +84,8 @@ const PosterDetail = ({admin, handlePosterDelete}) => {
             <h3>$ {poster.price}</h3>
             <Link to= '/sign-in'>
             <Button animated='fade' size='massive' attached='bottom'>
-                <Button.Content hidden>Sign In To Inquire</Button.Content>
-                <Button.Content visible>
+                <Button.Content visible>Sign In To Inquire</Button.Content>
+                <Button.Content hidden>
                     Sign in
                 </Button.Content>
             </Button>

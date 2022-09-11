@@ -6,7 +6,6 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Footer from './components/Footer';
 import Home from './components/pages/Home'
 import Blogs from './components/pages/Blogs'
-import Cart from './components/pages/Cart'
 import SignUp from './components/pages/SignUp'
 import SignIn from './components/pages/SignIn'
 import LogOut from './components/pages/LogOut';
@@ -15,6 +14,8 @@ import Posters from './components/pages/Posters';
 import CaligraphyDetail from './components/pages/CaligraphyDetail';
 import PosterDetail from './components/pages/PosterDetail';
 import Administration from './components/pages/Administration';
+import InquiryForm from './components/pages/InquiryForm';
+import Inquiries from './components/pages/Inquiries';
 
 function App() {
   const[admin, setAdmin] = useState(null)
@@ -62,7 +63,7 @@ function App() {
 
 
 
-  if(!admin){
+  if(!admin && !user){
   return (
     <div className="App">
       <Router>
@@ -70,21 +71,42 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home user={user}/>} />
           <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin}/>} />
-          <Route path='/cart' element={<Cart />} />
           <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
           <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
           <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
           <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
-          <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin}/>} />
+          <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin} user={user}/>} />
           <Route path='/posters' element={<Posters  posters={posters} />} />
-          <Route path='/posters/:id' element={<PosterDetail admin={admin}/>} />
+          <Route path='/posters/:id' element={<PosterDetail admin={admin} user={user}/>} />
         </Routes>
       <Footer />
       </Router>
     </div>
-  );
+  )
   }
-  else{
+  else if(user){
+    return (
+      <div className="App">
+        <Router>
+        <Navbar user={user} admin={admin}/>
+          <Routes>
+            <Route exact path="/" element={<Home user={user}/>} />
+            <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin}/>} />
+            <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
+            <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
+            <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
+            <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
+            <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin} user={user}/>} />
+            <Route path='/posters' element={<Posters  posters={posters} />} />
+            <Route path='/posters/:id' element={<PosterDetail admin={admin} user={user}/>} />
+            <Route path='/inquire' element={<InquiryForm user={user} />} />
+          </Routes>
+        <Footer />
+        </Router>
+      </div>
+    );
+  }
+  else if(admin){
     return (
       <div className="App">
         <Router>
@@ -92,10 +114,10 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home user={user}/>} />
             <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin} handleDeleteBlog={handleDeleteBlog}/>} />
-            <Route path='/cart' element={<Cart />} />
             <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
             <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
             <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
+            <Route path='/inquiries' element={<Inquiries />} />
             <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
             <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin} handleDeleteCaligraphy={handleDeleteCaligraphy}/>} />
             <Route path='/posters' element={<Posters  posters={posters} />} />

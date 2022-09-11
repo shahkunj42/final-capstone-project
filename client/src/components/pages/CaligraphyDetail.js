@@ -5,7 +5,7 @@ import { Image } from 'semantic-ui-react'
 import { Button, Icon } from 'semantic-ui-react'
 import ReviewContainer from '../ReviewContainer';
 
-const CaligraphyDetail = ({admin, handleDeleteCaligraphy}) => {
+const CaligraphyDetail = ({admin, handleDeleteCaligraphy, user}) => {
   const [caligraphy, setCaligraphy] = useState(null);
   const {id} = useParams()
   const navigate = useNavigate()
@@ -40,8 +40,8 @@ const CaligraphyDetail = ({admin, handleDeleteCaligraphy}) => {
         <p>{caligraphy.description}</p>
         <h3>$ {caligraphy.price}</h3>
         <Button animated='fade' size='massive' attached='bottom'>
-            <Button.Content hidden>If interested Click Here To Inquire</Button.Content>
-            <Button.Content visible>
+            <Button.Content visible>Click Here To Inquire</Button.Content>
+            <Button.Content hidden>
                 Inquire <Icon name='comment alternate outline' />
             </Button.Content>
         </Button>
@@ -83,9 +83,9 @@ const CaligraphyDetail = ({admin, handleDeleteCaligraphy}) => {
           <h3>$ {caligraphy.price}</h3>
           <Link to='/sign-in'>
           <Button animated='fade' size='massive' attached='bottom'>
-              <Button.Content hidden>Sign In To Inquire</Button.Content>
+              <Button.Content hidden>Sign In</Button.Content>
               <Button.Content visible>
-                  Sign in
+                  Sign in To Inquire
               </Button.Content>
           </Button>
           </Link>

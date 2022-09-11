@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import { Form, Button, Container } from 'semantic-ui-react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 function SignIn ({setUser, setAdmin}) {
@@ -60,6 +60,11 @@ function SignIn ({setUser, setAdmin}) {
                 <input onChange={handleFormChange} type="password" id="password" placeholder="password" name="password" ></input>
 
                 <Button color='olive' type="submit">Signin</Button>
+                <br></br>
+                <h1>Don't have an account yet?</h1>
+                <Link to='/sign-up'>
+                <Button color='olive'>Sign Up</Button>
+                </Link>
 
             </Form>
             </Container>

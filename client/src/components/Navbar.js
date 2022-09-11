@@ -46,19 +46,19 @@ function Navbar({user, admin}) {
                                 </Link>
                             </li>
                             <li className='navItem'>
-                                <Link to='/cart' className='nav-links' onClick={closeMobileMenu} >
-                                    <i className="fa-solid fa-cart-shopping" />
+                                <Link to='/administration' className='nav-links' onClick={closeMobileMenu} >
+                                    Admin
                                 </Link>
                             </li>
                             <li className='navItem'>
-                                <Link to='/administration' className='nav-links' onClick={closeMobileMenu} >
-                                    Admin
+                                <Link to='/inquiries' className='nav-links' onClick={closeMobileMenu} >
+                                    Inquiries
                                 </Link>
                             </li>
                         </ul>
                         {button && <Button buttonStyle='btn--outline'>
                             <Link to={user ? 'log-out' : '/sign-up'} className='btn-mobile'>
-                                {user ? `Hello ${user.username}`: 'SIGN UP'}
+                                Admin Authenticated
                             </Link>
                             </Button>}
                     </div>
@@ -67,7 +67,7 @@ function Navbar({user, admin}) {
             </>
         )
     }
-        else{
+        else if(user){
             return (
                 <>
                     <nav className='navbar'>
@@ -90,14 +90,14 @@ function Navbar({user, admin}) {
                                     </Link>
                                 </li>
                                 <li className='navItem'>
-                                    <Link to='/cart' className='nav-links' onClick={closeMobileMenu} >
-                                        <i className="fa-solid fa-cart-shopping" />
+                                    <Link to='/inquire' className='nav-links' onClick={closeMobileMenu} >
+                                        Inquire
                                     </Link>
                                 </li>
                             </ul>
                             {button && <Button buttonStyle='btn--outline'>
-                                <Link to={user ? 'log-out' : '/sign-up'} className='btn-mobile'>
-                                    {user ? `Hello ${user.username}`: 'SIGN UP'}
+                                <Link to='/log-out' className='btn-mobile'>
+                                    {user.username}
                                 </Link>
                                 </Button>}
                         </div>
@@ -107,6 +107,41 @@ function Navbar({user, admin}) {
             )
             
         }
+
+    else{
+        return (
+            <>
+                <nav className='navbar'>
+                    <div className='navbar-container'>
+                        <Link to='/' className='navbar-logo'>
+                            Designs By Shai <i className="fa-solid fa-spa" />
+                        </Link>
+                        <div className='menu-icon' onClick={handleClick}>
+                            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+                        </div>
+                        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                            <li className='navItem'>
+                                <Link to='/' className='nav-links' onClick={closeMobileMenu} >
+                                    Home
+                                </Link>
+                            </li>
+                            <li className='navItem'>
+                                <Link to='/blogs' className='nav-links' onClick={closeMobileMenu} >
+                                    Blogs
+                                </Link>
+                            </li>
+                        </ul>
+                        {button && <Button buttonStyle='btn--outline'>
+                            <Link to='/sign-up' className='btn-mobile'>
+                                 SIGN UP
+                            </Link>
+                            </Button>}
+                    </div>
+                </nav>
+
+            </>
+        )
+    }
             
 }
 
