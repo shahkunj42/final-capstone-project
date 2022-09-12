@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_31_203431) do
+ActiveRecord::Schema.define(version: 2022_09_11_221939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,15 +80,14 @@ ActiveRecord::Schema.define(version: 2022_08_31_203431) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.text "items"
-    t.integer "total_price"
-    t.text "comments"
-    t.bigint "customer_id", null: false
-    t.string "order_number"
+  create_table "inquries", force: :cascade do |t|
+    t.string "username"
+    t.string "name"
+    t.string "email"
+    t.text "description"
+    t.string "service"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
   create_table "posters", force: :cascade do |t|
@@ -105,8 +104,8 @@ ActiveRecord::Schema.define(version: 2022_08_31_203431) do
     t.text "review"
     t.integer "rating"
     t.bigint "customer_id", null: false
-    t.bigint "caligraphy_id", null: false
-    t.bigint "poster_id", null: false
+    t.bigint "caligraphy_id"
+    t.bigint "poster_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["caligraphy_id"], name: "index_reviews_on_caligraphy_id"
@@ -118,9 +117,6 @@ ActiveRecord::Schema.define(version: 2022_08_31_203431) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "blogs", "admins"
   add_foreign_key "caligraphies", "admins"
-  add_foreign_key "orders", "customers"
   add_foreign_key "posters", "admins"
-  add_foreign_key "reviews", "caligraphies"
   add_foreign_key "reviews", "customers"
-  add_foreign_key "reviews", "posters"
 end

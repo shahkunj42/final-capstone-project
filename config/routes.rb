@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :inquries
   resources :orders 
   resources :blogs
   resources :reviews

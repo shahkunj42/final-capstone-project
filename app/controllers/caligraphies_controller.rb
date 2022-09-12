@@ -33,7 +33,7 @@ class CaligraphiesController < ApplicationController
     private
     
     def caligraphy_params
-      params.permit(:title, :price, :description, :image, :admin_id)
+      params.require(:caligraphy).permit(:title, :price, :description, :image, :admin_id)
     end
 
 end

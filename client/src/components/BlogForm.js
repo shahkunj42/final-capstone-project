@@ -30,7 +30,7 @@ function BlogForm({setBlogs}) {
         .then((r) => {
             if(r.created) {
             r.json()
-        .then((data) => setBlogs((prevState) => [...prevState, data]))
+        .then((data) => setBlogs(data))
         .then(navigate('/blogs'))
     }
     else {
@@ -55,7 +55,7 @@ function BlogForm({setBlogs}) {
             <Form onSubmit={handleSubmit}>
                 <input onChange={handleFormChange} type="text" id="title" placeholder="Title" name="title"></input>
 
-                <input onChange={handleFormChange} type="text" id="content" placeholder="What was your newest adventure?" name="content"></input>
+                <Form.TextArea onChange={handleFormChange} style={{ height: 500}} type="text" id="content" placeholder="What was your newest adventure?" name="content" />
                 
                 <input onChange={handleFormChange} type="text" id="header_image" placeholder="Header Image" name="header_image"></input>
             <Button type="submit" >Submit</Button>

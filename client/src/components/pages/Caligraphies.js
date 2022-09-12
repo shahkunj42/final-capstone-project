@@ -8,7 +8,7 @@ function Caligraphies({caligraphies}) {
 
   return (
     <div className='container'>
-    <h1>Custom Caligraphy and Cards</h1>
+    <h1>Custom Calligraphy and Cards</h1>
     <div className='container_body'>
       <div className='container_wrapper'>
           {caligraphyList}

@@ -3,7 +3,7 @@ import BlogForm from '../BlogForm'
 import CaligraphyForm from '../CaligraphyForm'
 import PosterForm from '../PosterForm'
 
-function Administration({admin, posters, blogs, caligraphies, setPosters, setCaligraphies, setBlogs}) {
+function Administration({setPosters, setCaligraphies, setBlogs}) {
 
   return (
     <div>

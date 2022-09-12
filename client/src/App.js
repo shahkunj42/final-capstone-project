@@ -51,14 +51,29 @@ function App() {
     setBlogs(updateBlog);
   }
 
-  function handleDeletePoster(posterToDeleteId) {
-    const updatePosters = posters.filter((id) => id !== posterToDeleteId);
-    setBlogs(updatePosters);
+  function handleDeletePoster(id) {
+    const updatePosters = posters.filter((poster) => id !== poster.id);
+    setPosters(updatePosters);
   }
 
-  function handleDeleteCaligraphy(caligraphy){
-    const updatedCalig = caligraphies.filter((id) => id !== caligraphy)
+  function handleDeleteCaligraphy(id){
+    const updatedCalig = caligraphies.filter((caligraphy) => id !== caligraphy.id)
     setCaligraphies(updatedCalig)
+  }
+
+  function handleAddBlog(newBlog) {
+    const updatedBlogsArray = [...blogs, newBlog]
+    setBlogs(updatedBlogsArray)
+  }
+
+  function handleAddCaligraphy(newCaligraphy) {
+    const updatedCaligraphiesArray = [...caligraphies, newCaligraphy]
+    setCaligraphies(updatedCaligraphiesArray)
+  }
+
+  function handleAddPoster(newPoster) {
+    const updatedPostersArray = [...posters, newPoster]
+    setPosters(updatedPostersArray)
   }
 
 
@@ -122,7 +137,7 @@ function App() {
             <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin} handleDeleteCaligraphy={handleDeleteCaligraphy}/>} />
             <Route path='/posters' element={<Posters  posters={posters} />} />
             <Route path='/posters/:id' element={<PosterDetail admin={admin} handlePosterDelete={handleDeletePoster}/>} />
-            <Route path='/administration' element={<Administration admin={admin} caligraphies={caligraphies} blogs={blogs} posters={posters} setBlogs={setBlogs} setCaligraphies={setCaligraphies} setPosters={setPosters} />} />
+            <Route path='/administration' element={<Administration setBlogs={handleAddBlog} setCaligraphies={handleAddCaligraphy} setPosters={handleAddPoster} />} />
           </Routes>
         <Footer />
         </Router>
