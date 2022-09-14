@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'semantic-ui-react'
+import { Card, Grid } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 
@@ -12,7 +12,7 @@ const PosterCards = ({poster}) => {
 
     return(
         <Link to={`/posters/${id}`}>
-        <ul className='container_items'>
+        <Grid.Column>
             <Card 
                 image={image_url}
                 header={title}
@@ -20,7 +20,7 @@ const PosterCards = ({poster}) => {
                 description={description}
                 extra={extra}
             />
-        </ul>
+        </Grid.Column>
         </Link>
 )
 }

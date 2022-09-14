@@ -1,19 +1,18 @@
 import React from 'react'
 import CaligraphyCards from '../CaligraphyCards'
-import '../Container.css'
+import { Grid } from 'semantic-ui-react'
 
 function Caligraphies({caligraphies}) {
 
    let caligraphyList = caligraphies.map(caligraphy => <CaligraphyCards key={caligraphy.id} caligraphy = {caligraphy} />)
 
   return (
-    <div className='container'>
+    <div>
     <h1>Custom Calligraphy and Cards</h1>
-    <div className='container_body'>
-      <div className='container_wrapper'>
+    <br></br>
+      <Grid relaxed columns={4} padded>
           {caligraphyList}
-      </div>
-    </div>
+      </Grid>
     </div>
   )
 }

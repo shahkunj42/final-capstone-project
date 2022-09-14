@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Header, Button, Icon } from 'semantic-ui-react'
+import { Container, Header, Button, Icon, Grid } from 'semantic-ui-react'
 import { Image } from 'semantic-ui-react'
 
 const BlogsContainer = ({blog, admin, handleDeleteBlog}) => {
@@ -22,16 +22,19 @@ const BlogsContainer = ({blog, admin, handleDeleteBlog}) => {
 
   if(!admin){
     return(
+      <Grid.Row>
       <Container text>
         <Image src={header_image} fluid />
         <Header as='h2'>{title}</Header>
         <p>{content}</p>
       </Container>
+      </Grid.Row>
     )
     }
     else{
       return(
         <div>
+        <Grid.Row>
         <Container text>
           <Image src={header_image} fluid />
           <Header as='h2'>{title}</Header>
@@ -42,7 +45,8 @@ const BlogsContainer = ({blog, admin, handleDeleteBlog}) => {
                 <Icon name='trash alternate' />
             </Button.Content>
           </Button>
-        </Container>  
+        </Container> 
+        </Grid.Row> 
   </div>
     )}
 }

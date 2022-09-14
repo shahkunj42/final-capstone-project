@@ -128,16 +128,16 @@ function App() {
         <Navbar user={user} admin={admin}/>
           <Routes>
             <Route exact path="/" element={<Home user={user}/>} />
-            <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin} handleDeleteBlog={handleDeleteBlog}/>} />
             <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
             <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
             <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
             <Route path='/inquiries' element={<Inquiries />} />
-            <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
             <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin} handleDeleteCaligraphy={handleDeleteCaligraphy}/>} />
-            <Route path='/posters' element={<Posters  posters={posters} />} />
             <Route path='/posters/:id' element={<PosterDetail admin={admin} handlePosterDelete={handleDeletePoster}/>} />
             <Route path='/administration' element={<Administration setBlogs={handleAddBlog} setCaligraphies={handleAddCaligraphy} setPosters={handleAddPoster} />} />
+            <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin} handleDeleteBlog={handleDeleteBlog}/>} />
+            <Route path='/posters' element={<Posters  posters={posters} />} />
+            <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
           </Routes>
         <Footer />
         </Router>
