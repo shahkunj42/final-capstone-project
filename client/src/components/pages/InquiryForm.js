@@ -55,7 +55,7 @@ function InquiryForm({user}) {
 
     return(
         <div>
-            <h1>Create an Account</h1>
+            <h1>Create an Inquiry</h1>
 
             <Container>
             
@@ -67,7 +67,7 @@ function InquiryForm({user}) {
                 <label htmlFor="description">Give us a brief detailed explanation of what you are looking for!</label>
                 <Form.TextArea onChange={handleFormChange} style={{ height: 100}} type="text" id="description" name="description" placeholder='Description...'/>
 
-                <Button color='olive' type="submit">Submit</Button>
+                <Button color='green' type="submit">Submit</Button>
 
                 </Form>
 

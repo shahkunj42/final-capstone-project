@@ -33,16 +33,18 @@ const CaligraphyDetail = ({admin, handleDeleteCaligraphy, user}) => {
         <Header as='h2'>{caligraphy.title}</Header>
         <p>{caligraphy.description}</p>
         <h3>$ {caligraphy.price}</h3>
+        <Link to='/inquire'>
         <Button animated='fade' size='massive' attached='bottom'>
             <Button.Content visible>Click Here To Inquire</Button.Content>
             <Button.Content hidden>
                 Inquire <Icon name='comment alternate outline' />
             </Button.Content>
         </Button>
+        </Link>
     </Container>
-      <br></br>
+      {/* <br></br>
         <h1>Reviews!</h1>
-        <ReviewContainer reviews={caligraphy.reviews} />
+        <ReviewContainer reviews={caligraphy.reviews} /> */}
     </div>
   )
   }
@@ -61,9 +63,9 @@ const CaligraphyDetail = ({admin, handleDeleteCaligraphy, user}) => {
             </Button.Content>
         </Button>
       </Container>
-        <br></br>
+        {/* <br></br>
         <h1>Reviews!</h1>
-        <ReviewContainer reviews={caligraphy.reviews} />
+        <ReviewContainer reviews={caligraphy.reviews} /> */}
     </div>
   )
   }
@@ -84,9 +86,9 @@ const CaligraphyDetail = ({admin, handleDeleteCaligraphy, user}) => {
           </Button>
           </Link>
         </Container>
-        <br></br>
+        {/* <br></br>
         <h1>Reviews!</h1>
-        <ReviewContainer reviews={caligraphy.reviews} />
+        <ReviewContainer reviews={caligraphy.reviews} /> */}
       </div>
     )
   }

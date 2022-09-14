@@ -1,6 +1,6 @@
 class CaligraphiesController < ApplicationController
 
-     # skip_before_action :authorize
+    #  skip_before_action :authorize
     # skip_before_action :admin, only: [:index, :show]
 
     def index

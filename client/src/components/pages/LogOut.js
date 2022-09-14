@@ -19,7 +19,7 @@ function LogOut({setUser, setAdmin}) {
   return (
     <div className='logout'>
         <h1>Are you sure you want to leave?</h1>
-        <Button color='violet' onClick={handleLogOut} >Log Out</Button>
+        <Button color='green' onClick={handleLogOut} >Log Out</Button>
     </div>
   )
 }

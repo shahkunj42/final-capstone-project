@@ -33,16 +33,18 @@ const PosterDetail = ({admin, handlePosterDelete, user}) => {
             <Header as='h2'>{poster.title}</Header>
             <p>{poster.description}</p>
             <h3>$ {poster.price}</h3>
+            <Link to='/inquire'>
             <Button animated='fade' size='massive' attached='bottom'>
                 <Button.Content visible>Click Here To Inquire</Button.Content>
                 <Button.Content hidden>
                     Inquire <Icon name='comment alternate outline' />
                 </Button.Content>
             </Button>
+            </Link>
         </Container>
-        <br></br>
+        {/* <br></br>
         <h1>Reviews!</h1>
-        <ReviewContainer reviews={poster.reviews} />
+        <ReviewContainer reviews={poster.reviews} /> */}
         </div>
     )
     }
@@ -62,9 +64,9 @@ const PosterDetail = ({admin, handlePosterDelete, user}) => {
                 </Button.Content>
             </Button>
         </Container>
-        <br></br>
+        {/* <br></br>
         <h1>Reviews!</h1>
-        <ReviewContainer reviews={poster.reviews} />
+        <ReviewContainer reviews={poster.reviews} /> */}
         </div>
 
     )}
@@ -85,9 +87,9 @@ const PosterDetail = ({admin, handlePosterDelete, user}) => {
             </Button>
             </Link>
         </Container>
-        <br></br>
+        {/* <br></br>
         <h1>Reviews!</h1>
-        <ReviewContainer reviews={poster.reviews} />
+        <ReviewContainer reviews={poster.reviews} /> */}
         </div>
     )
     }

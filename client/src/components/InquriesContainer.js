@@ -1,9 +1,10 @@
 import React from 'react'
-import { Container, Header } from 'semantic-ui-react'
+import { Container, Header, Grid } from 'semantic-ui-react'
 
 function InquriesContainer({inqury}) {
 
   return (
+    <Grid.Row>
     <Container text>
         <Header as='h2'>{inqury.service}</Header>
         <p>{inqury.description}</p>
@@ -11,6 +12,7 @@ function InquriesContainer({inqury}) {
         <p>{inqury.name}</p>
         <p>{inqury.email}</p>
     </Container>
+    </Grid.Row>
   )
 }
 

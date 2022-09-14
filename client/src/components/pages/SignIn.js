@@ -59,11 +59,11 @@ function SignIn ({setUser, setAdmin}) {
                 <label htmlFor="password">Password</label>
                 <input onChange={handleFormChange} type="password" id="password" placeholder="password" name="password" ></input>
 
-                <Button color='olive' type="submit">Signin</Button>
+                <Button color='green' type="submit">Signin</Button>
                 <br></br>
                 <h1>Don't have an account yet?</h1>
                 <Link to='/sign-up'>
-                <Button color='olive'>Sign Up</Button>
+                <Button color='green'>Sign Up</Button>
                 </Link>
 
             </Form>

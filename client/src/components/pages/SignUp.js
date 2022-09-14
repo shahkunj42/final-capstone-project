@@ -62,9 +62,15 @@ function SignUp({setUser}) {
                 <label htmlFor="email">Email</label>
                 <input onChange={handleFormChange} type="text" id="email" name="email" ></input>
 
+                <label htmlFor="password">Password</label>
+                <input onChange={handleFormChange} type="password" id="password" name="password" ></input>
+                
+                <label htmlFor="password_confirmation">Password Confirmation</label>
+                <input onChange={handleFormChange} type="password" id="password_confirmation" name="password_confirmation"></input>
+                
                 <div>
-                    <br></br>
-                    <p className="password">Please choose a password with at least</p>
+                <br></br>
+                    <p className="password">Password Must Contain At Least</p>
                         <ul className="password_list">
                             <li>8 characters</li>
                             <li>1 capitalized letter</li>
@@ -73,14 +79,9 @@ function SignUp({setUser}) {
                         </ul>
                 </div>
 
-                <label htmlFor="password">Password</label>
-                <input onChange={handleFormChange} type="password" id="password" name="password" ></input>
-                
-                <label htmlFor="password_confirmation">Password Confirmation</label>
-                <input onChange={handleFormChange} type="password" id="password_confirmation" name="password_confirmation"></input>
+                <br></br>
 
-
-                <Button color='olive' type="submit">Submit</Button>
+                <Button color='green' type="submit">Submit</Button>
 
                 </Form>
 

@@ -95,6 +95,7 @@ function App() {
     <div className="App">
       <Router>
       <Navbar user={user} admin={admin}/>
+      <br></br>
         <Routes>
           <Route exact path="/" element={<Home user={user}/>} />
           <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin}/>} />
@@ -106,6 +107,7 @@ function App() {
           <Route path='/posters' element={<Posters  posters={posters} />} />
           <Route path='/posters/:id' element={<PosterDetail admin={admin} user={user}/>} />
         </Routes>
+      <br></br>
       <Footer />
       </Router>
     </div>
@@ -116,6 +118,7 @@ function App() {
       <div className="App">
         <Router>
         <Navbar user={user} admin={admin}/>
+        <br></br>
           <Routes>
             <Route exact path="/" element={<Home user={user}/>} />
             <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin}/>} />
@@ -128,6 +131,7 @@ function App() {
             <Route path='/posters/:id' element={<PosterDetail admin={admin} user={user}/>} />
             <Route path='/inquire' element={<InquiryForm user={user} />} />
           </Routes>
+        <br></br>
         <Footer />
         </Router>
       </div>
@@ -138,6 +142,7 @@ function App() {
       <div className="App">
         <Router>
         <Navbar user={user} admin={admin}/>
+        <br></br>
           <Routes>
             <Route exact path="/" element={<Home user={user}/>} />
             <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
@@ -152,6 +157,7 @@ function App() {
             <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
             <Route path='/blogs/edit/:id' element={<EditBlog blog={blogs} setBlogs={handleUpdateBlogs}/>} />
           </Routes>
+          <br></br>
         <Footer />
         </Router>
       </div>
