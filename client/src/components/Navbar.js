@@ -57,7 +57,7 @@ function Navbar({user, admin}) {
                             </li>
                         </ul>
                         {button && <Button buttonStyle='btn--outline'>
-                            <Link to={'log-out'} className='btn-mobile'>
+                            <Link to='/log-out' className='btn-mobile'>
                                 Admin Authenticated
                             </Link>
                             </Button>}
