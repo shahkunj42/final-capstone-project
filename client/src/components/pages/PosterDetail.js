@@ -21,7 +21,7 @@ const PosterDetail = ({admin, handlePosterDelete, user}) => {
   function handleDelete() {
     fetch(`/posters/${id}`, {
       method: "DELETE",
-    }).then(handlePosterDelete(id)).then(navigate('/posters'))}
+    }).then(() => handlePosterDelete(id)).then(navigate('/posters'))}
 
   if(!poster) {return(<h1>loading</h1>)}
   

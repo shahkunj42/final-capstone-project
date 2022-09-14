@@ -16,7 +16,7 @@ const BlogsContainer = ({blog, admin, handleDeleteBlog}) => {
     function handleDelete() {
       fetch(`/blogs/${id}`, {
         method: "DELETE",
-      }).then(handleDeleteBlog(id)).then(navigate('/blogs'));
+      }).then(() => handleDeleteBlog(id));
     }
 
   if(!admin){
