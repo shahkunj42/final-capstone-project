@@ -1,12 +1,13 @@
 import React from 'react'
 import { Form, Container, Button } from 'semantic-ui-react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
-
-function BlogForm({setBlogs}) {
+function EditBlog({blogs, setBlogs}) {
 
     const [formState, setFormState] = useState({})
+    const [errors, setErrors] = useState(null)
+    const {id} = useParams()
 
     let navigate = useNavigate();
 
@@ -15,19 +16,27 @@ function BlogForm({setBlogs}) {
         const newFormObj = {
             title,
             header_image,
-            content,
-            admin_id: 1
+            content
         }
         
-        fetch("/blogs", {
-            method: "POST",
+        fetch(`/blogs/${id}`, {
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(newFormObj),
-        }).then((r) => r.json())
+        })
+        .then((r) => {
+            if(r.ok) {
+            r.json()
         .then((data) => setBlogs(data))
-        .then(navigate('/blogs'))}
+        .then(navigate('/blogs'))
+    }
+    else {
+        r.json().then((err) => setErrors(err.errors));
+    }
+})
+}
     
     
     const {title, header_image, content} = formState
@@ -52,8 +61,9 @@ function BlogForm({setBlogs}) {
                 <br></br>
             </Form>
         </Container>
+        <h1>{errors ? {errors} : null}</h1>
         </div>
     )
 }
 
-export default BlogForm;
+export default EditBlog

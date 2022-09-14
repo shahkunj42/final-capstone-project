@@ -21,13 +21,7 @@ const CaligraphyDetail = ({admin, handleDeleteCaligraphy, user}) => {
   function handleDelete() {
     fetch(`/caligraphies/${id}`, {
       method: "DELETE",
-    }).then((r) => {
-      if (r.ok) {
-        handleDeleteCaligraphy(id);
-      }
-    })
-    .then(navigate('/caligraphies'));
-  }
+    }).then(handleDeleteCaligraphy(id)).then(navigate('/caligraphies'))}
 
   if(!caligraphy) return <h1>Loading</h1>
 

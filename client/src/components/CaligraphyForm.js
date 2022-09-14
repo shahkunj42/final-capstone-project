@@ -24,17 +24,10 @@ function CaligraphyForm({setCaligraphies}) {
       method: "POST",
       body: data,
     })
-    .then((r) => {
-         if(r.created) {
-         r.json()
-         .then((data) => setCaligraphies(data))
-         .then(navigate('/caligraphies'))
-        }
-        else {
-            r.json().then((err) => setErrors(err.errors));
-        }
-    })
-}
+    .then((r) => r.json())
+    .then((data) => setCaligraphies(data))
+    .then(navigate('/caligraphies'))}
+    
 return(
              <div>
              <h1>New Calligraphy Form</h1>

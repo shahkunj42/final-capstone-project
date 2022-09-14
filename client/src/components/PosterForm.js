@@ -24,17 +24,10 @@ function PosterForm({setPosters}) {
       method: "POST",
       body: data,
     })
-    .then((r) => {
-         if(r.created) {
-         r.json()
-         .then((data) => setPosters(data))
-         .then(navigate('/posters'))
-        }
-        else {
-            r.json().then((err) => setErrors(err.errors));
-        }
-    })
-}
+    .then((r) => r.json())
+    .then((data) => setPosters(data))
+    .then(navigate('/posters'))
+  }
 return(
              <div>
              <h1>New Poster Form</h1>

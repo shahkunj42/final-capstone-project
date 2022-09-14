@@ -16,6 +16,7 @@ import PosterDetail from './components/pages/PosterDetail';
 import Administration from './components/pages/Administration';
 import InquiryForm from './components/pages/InquiryForm';
 import Inquiries from './components/pages/Inquiries';
+import EditBlog from './components/EditBlog';
 
 function App() {
   const[admin, setAdmin] = useState(null)
@@ -46,8 +47,8 @@ function App() {
   useEffect(() => fetch('/posters').then(r => r.json()).then(data => setPosters(data)), [])
   useEffect(() => fetch('/blogs').then(r => r.json()).then(data => setBlogs(data)), [])
 
-  function handleDeleteBlog(blogToDeleteId) {
-    const updateBlog = blogs.filter((id) => id !== blogToDeleteId);
+  function handleDeleteBlog(id) {
+    const updateBlog = blogs.filter((blog) => id !== blog.id);
     setBlogs(updateBlog);
   }
 
@@ -74,6 +75,17 @@ function App() {
   function handleAddPoster(newPoster) {
     const updatedPostersArray = [...posters, newPoster]
     setPosters(updatedPostersArray)
+  }
+
+  function handleUpdateBlogs(updatedBlogs) {
+    const updatedBlogsArray = blogs.map((blog) => {
+      if (blog.id === updatedBlogs.id) {
+        return updatedBlogs;
+      } else {
+        return blog;
+      }
+    });
+    setBlogs(updatedBlogsArray);
   }
 
 
@@ -138,6 +150,7 @@ function App() {
             <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin} handleDeleteBlog={handleDeleteBlog}/>} />
             <Route path='/posters' element={<Posters  posters={posters} />} />
             <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
+            <Route path='/blogs/edit/:id' element={<EditBlog blog={blogs} setBlogs={handleUpdateBlogs}/>} />
           </Routes>
         <Footer />
         </Router>
