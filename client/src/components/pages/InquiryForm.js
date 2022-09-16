@@ -35,7 +35,7 @@ function InquiryForm({user}) {
             if(r.ok){
          r.json()
         .then((data) => console.log(data))
-        .then(navigate('/'))
+        .then(navigate('/thank-you'))
         }
         else {
             r.json().then((err) => setErrors(err.errors));

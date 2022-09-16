@@ -17,6 +17,9 @@ import Administration from './components/pages/Administration';
 import InquiryForm from './components/pages/InquiryForm';
 import Inquiries from './components/pages/Inquiries';
 import EditBlog from './components/EditBlog';
+import InquiryCompleted from './components/pages/InquiryCompleted';
+import HowItWorks from './components/pages/HowItWorks';
+import Contact from './components/pages/Contact';
 
 function App() {
   const[admin, setAdmin] = useState(null)
@@ -102,10 +105,12 @@ function App() {
           <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
           <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
           <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
+          <Route path='/contact' element={<Contact /> } />
           <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
           <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin} user={user}/>} />
           <Route path='/posters' element={<Posters  posters={posters} />} />
           <Route path='/posters/:id' element={<PosterDetail admin={admin} user={user}/>} />
+          <Route path='/how-it-works' element={<HowItWorks />} />
         </Routes>
       <br></br>
       <Footer />
@@ -126,10 +131,13 @@ function App() {
             <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
             <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
             <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
+            <Route path='/contact' element={<Contact /> } />
             <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin} user={user}/>} />
             <Route path='/posters' element={<Posters  posters={posters} />} />
             <Route path='/posters/:id' element={<PosterDetail admin={admin} user={user}/>} />
             <Route path='/inquire' element={<InquiryForm user={user} />} />
+            <Route path='/thank-you' element={<InquiryCompleted />} />
+            <Route path='/how-it-works' element={<HowItWorks />} />
           </Routes>
         <br></br>
         <Footer />
@@ -149,6 +157,8 @@ function App() {
             <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
             <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
             <Route path='/inquiries' element={<Inquiries />} />
+            <Route path='/how-it-works' element={<HowItWorks />} />
+            <Route path='/contact' element={<Contact /> } />
             <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin} handleDeleteCaligraphy={handleDeleteCaligraphy}/>} />
             <Route path='/posters/:id' element={<PosterDetail admin={admin} handlePosterDelete={handleDeletePoster}/>} />
             <Route path='/administration' element={<Administration setBlogs={handleAddBlog} setCaligraphies={handleAddCaligraphy} setPosters={handleAddPoster} />} />
