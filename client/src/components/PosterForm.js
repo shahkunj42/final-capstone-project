@@ -26,7 +26,7 @@ function PosterForm({setPosters}) {
     })
     .then((r) => r.json())
     .then((data) => setPosters(data))
-    .then(navigate('/posters'))
+    .then(navigate('/shai-posters'))
   }
 return(
              <div>

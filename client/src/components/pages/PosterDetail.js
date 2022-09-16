@@ -21,7 +21,7 @@ const PosterDetail = ({admin, handlePosterDelete, user}) => {
   function handleDelete() {
     fetch(`/posters/${id}`, {
       method: "DELETE",
-    }).then(() => handlePosterDelete(id)).then(navigate('/posters'))}
+    }).then(() => handlePosterDelete(id)).then(navigate('/shai-posters'))}
 
   if(!poster) {return(<h1>loading</h1>)}
   
@@ -33,7 +33,7 @@ const PosterDetail = ({admin, handlePosterDelete, user}) => {
             <Header as='h2'>{poster.title}</Header>
             <p>{poster.description}</p>
             <h3>$ {poster.price}</h3>
-            <Link to='/inquire'>
+            <Link to='/shai-inquire'>
             <Button animated='fade' size='massive' attached='bottom'>
                 <Button.Content visible>Click Here To Inquire</Button.Content>
                 <Button.Content hidden>

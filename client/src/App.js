@@ -101,15 +101,15 @@ function App() {
       <br></br>
         <Routes>
           <Route exact path="/" element={<Home user={user}/>} />
-          <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin}/>} />
+          <Route path='/shai-blogs' element={<Blogs blogs={blogs} admin={admin}/>} />
           <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
           <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
           <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
           <Route path='/contact' element={<Contact /> } />
-          <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
-          <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin} user={user}/>} />
-          <Route path='/posters' element={<Posters  posters={posters} />} />
-          <Route path='/posters/:id' element={<PosterDetail admin={admin} user={user}/>} />
+          <Route path='/shai-caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
+          <Route path='/shai-caligraphies/:id' element={<CaligraphyDetail admin={admin} user={user}/>} />
+          <Route path='/shai-posters' element={<Posters  posters={posters} />} />
+          <Route path='/shai-posters/:id' element={<PosterDetail admin={admin} user={user}/>} />
           <Route path='/how-it-works' element={<HowItWorks />} />
         </Routes>
       <br></br>
@@ -126,16 +126,16 @@ function App() {
         <br></br>
           <Routes>
             <Route exact path="/" element={<Home user={user}/>} />
-            <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin}/>} />
+            <Route path='/shai-blogs' element={<Blogs blogs={blogs} admin={admin}/>} />
             <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
             <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
             <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
-            <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
+            <Route path='/shai-caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
             <Route path='/contact' element={<Contact /> } />
-            <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin} user={user}/>} />
-            <Route path='/posters' element={<Posters  posters={posters} />} />
-            <Route path='/posters/:id' element={<PosterDetail admin={admin} user={user}/>} />
-            <Route path='/inquire' element={<InquiryForm user={user} />} />
+            <Route path='/shai-caligraphies/:id' element={<CaligraphyDetail admin={admin} user={user}/>} />
+            <Route path='/shai-posters' element={<Posters  posters={posters} />} />
+            <Route path='/shai-posters/:id' element={<PosterDetail admin={admin} user={user}/>} />
+            <Route path='/shai-inquire' element={<InquiryForm user={user} />} />
             <Route path='/thank-you' element={<InquiryCompleted />} />
             <Route path='/how-it-works' element={<HowItWorks />} />
           </Routes>
@@ -156,16 +156,16 @@ function App() {
             <Route path='/sign-up' element={<SignUp setUser={setUser} />} />
             <Route path='/sign-in' element={<SignIn setUser={setUser} setAdmin={setAdmin} /> } />
             <Route path='/log-out' element={<LogOut setUser={setUser} setAdmin={setAdmin}/>} />
-            <Route path='/inquiries' element={<Inquiries />} />
+            <Route path='/shai-inquiries' element={<Inquiries />} />
             <Route path='/how-it-works' element={<HowItWorks />} />
             <Route path='/contact' element={<Contact /> } />
-            <Route path='/caligraphies/:id' element={<CaligraphyDetail admin={admin} handleDeleteCaligraphy={handleDeleteCaligraphy}/>} />
-            <Route path='/posters/:id' element={<PosterDetail admin={admin} handlePosterDelete={handleDeletePoster}/>} />
-            <Route path='/administration' element={<Administration setBlogs={handleAddBlog} setCaligraphies={handleAddCaligraphy} setPosters={handleAddPoster} />} />
-            <Route path='/blogs' element={<Blogs blogs={blogs} admin={admin} handleDeleteBlog={handleDeleteBlog}/>} />
-            <Route path='/posters' element={<Posters  posters={posters} />} />
-            <Route path='/caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
-            <Route path='/blogs/edit/:id' element={<EditBlog blog={blogs} setBlogs={handleUpdateBlogs}/>} />
+            <Route path='/shai-caligraphies/:id' element={<CaligraphyDetail admin={admin} handleDeleteCaligraphy={handleDeleteCaligraphy}/>} />
+            <Route path='/shai-posters/:id' element={<PosterDetail admin={admin} handlePosterDelete={handleDeletePoster}/>} />
+            <Route path='/shai-administration' element={<Administration setBlogs={handleAddBlog} setCaligraphies={handleAddCaligraphy} setPosters={handleAddPoster} />} />
+            <Route path='/shai-blogs' element={<Blogs blogs={blogs} admin={admin} handleDeleteBlog={handleDeleteBlog}/>} />
+            <Route path='/shai-posters' element={<Posters  posters={posters} />} />
+            <Route path='/shai-caligraphies' element={<Caligraphies caligraphies={caligraphies} />} />
+            <Route path='/shai-blogs/edit/:id' element={<EditBlog blog={blogs} setBlogs={handleUpdateBlogs}/>} />
           </Routes>
           <br></br>
         <Footer />

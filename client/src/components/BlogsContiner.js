@@ -45,7 +45,7 @@ const BlogsContainer = ({blog, admin, handleDeleteBlog}) => {
                 <Icon name='trash alternate' />
             </Button.Content>
           </Button>
-          <Link to={`/blogs/edit/${id}`}>
+          <Link to={`/shai-blogs/edit/${id}`}>
           <Button animated='fade' size='massive'>
             <Button.Content hidden>Edit</Button.Content>
             <Button.Content visible>

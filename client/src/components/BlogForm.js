@@ -27,7 +27,7 @@ function BlogForm({setBlogs}) {
             body: JSON.stringify(newFormObj),
         }).then((r) => r.json())
         .then((data) => setBlogs(data))
-        .then(navigate('/blogs'))}
+        .then(navigate('/shai-blogs'))}
     
     
     const {title, header_image, content} = formState

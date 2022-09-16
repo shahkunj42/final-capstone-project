@@ -41,17 +41,17 @@ function Navbar({user, admin}) {
                                 </Link>
                             </li>
                             <li className='navItem'>
-                                <Link to='/blogs' className='nav-links' onClick={closeMobileMenu} >
+                                <Link to='/shai-blogs' className='nav-links' onClick={closeMobileMenu} >
                                     Blogs
                                 </Link>
                             </li>
                             <li className='navItem'>
-                                <Link to='/administration' className='nav-links' onClick={closeMobileMenu} >
+                                <Link to='/shai-administration' className='nav-links' onClick={closeMobileMenu} >
                                     Admin
                                 </Link>
                             </li>
                             <li className='navItem'>
-                                <Link to='/inquiries' className='nav-links' onClick={closeMobileMenu} >
+                                <Link to='/shai-inquiries' className='nav-links' onClick={closeMobileMenu} >
                                     Inquiries
                                 </Link>
                             </li>
@@ -85,12 +85,12 @@ function Navbar({user, admin}) {
                                     </Link>
                                 </li>
                                 <li className='navItem'>
-                                    <Link to='/blogs' className='nav-links' onClick={closeMobileMenu} >
+                                    <Link to='/shai-blogs' className='nav-links' onClick={closeMobileMenu} >
                                         Blogs
                                     </Link>
                                 </li>
                                 <li className='navItem'>
-                                    <Link to='/inquire' className='nav-links' onClick={closeMobileMenu} >
+                                    <Link to='/shai-inquire' className='nav-links' onClick={closeMobileMenu} >
                                         Inquire
                                     </Link>
                                 </li>
@@ -126,7 +126,7 @@ function Navbar({user, admin}) {
                                 </Link>
                             </li>
                             <li className='navItem'>
-                                <Link to='/blogs' className='nav-links' onClick={closeMobileMenu} >
+                                <Link to='/shai-blogs' className='nav-links' onClick={closeMobileMenu} >
                                     Blogs
                                 </Link>
                             </li>

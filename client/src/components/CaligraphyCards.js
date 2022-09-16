@@ -10,7 +10,7 @@ const CaligraphyCards = ({caligraphy}) => {
     const extra = <p>$ {price}</p>
 
     return(
-        <Link to={`/caligraphies/${id}`}>
+        <Link to={`/shai-caligraphies/${id}`}>
         <Grid.Column>
             <Card
                 image={image_url}

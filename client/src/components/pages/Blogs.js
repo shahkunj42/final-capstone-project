@@ -8,7 +8,7 @@ function Blogs({blogs, admin, handleDeleteBlog}) {
 
     <div>
       <Grid padded='vertically'>
-      {blogList}
+      {blogList.reverse()}
       </Grid>
     </div>
   )

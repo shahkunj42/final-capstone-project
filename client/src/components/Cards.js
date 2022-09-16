@@ -14,13 +14,13 @@ function Cards() {
               src='https://i.imgur.com/zpeacNa.jpg'
               text='Custom Cards and Calligraphy'
               label='Calligraphy'
-              path='/caligraphies'
+              path='/shai-caligraphies'
             />
             <CardItem
               src='https://i.imgur.com/7QGMcL4.jpg'
               text='Wedding Posters'
               label='Posters'
-              path='/posters'
+              path='/shai-posters'
             />
           </ul>
         </div>

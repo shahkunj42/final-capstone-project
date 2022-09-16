@@ -26,7 +26,7 @@ function CaligraphyForm({setCaligraphies}) {
     })
     .then((r) => r.json())
     .then((data) => setCaligraphies(data))
-    .then(navigate('/caligraphies'))}
+    .then(navigate('/shai-caligraphies'))}
     
 return(
              <div>

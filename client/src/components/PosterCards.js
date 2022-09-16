@@ -11,7 +11,7 @@ const PosterCards = ({poster}) => {
     const extra = <p>$ {price}</p>
 
     return(
-        <Link to={`/posters/${id}`}>
+        <Link to={`/shai-posters/${id}`}>
         <Grid.Column>
             <Card 
                 image={image_url}

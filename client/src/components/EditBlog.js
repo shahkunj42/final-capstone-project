@@ -30,7 +30,7 @@ function EditBlog({blogs, setBlogs}) {
             if(r.ok) {
             r.json()
         .then((data) => setBlogs(data))
-        .then(navigate('/blogs'))
+        .then(navigate('/shai-blogs'))
     }
     else {
         r.json().then((err) => setErrors(err.errors));

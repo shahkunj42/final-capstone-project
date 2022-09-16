@@ -21,7 +21,7 @@ const CaligraphyDetail = ({admin, handleDeleteCaligraphy, user}) => {
   function handleDelete() {
     fetch(`/caligraphies/${id}`, {
       method: "DELETE",
-    }).then(() => handleDeleteCaligraphy(id)).then(navigate('/caligraphies'))}
+    }).then(() => handleDeleteCaligraphy(id)).then(navigate('/shai-caligraphies'))}
 
   if(!caligraphy) return <h1>Loading</h1>
 
@@ -33,7 +33,7 @@ const CaligraphyDetail = ({admin, handleDeleteCaligraphy, user}) => {
         <Header as='h2'>{caligraphy.title}</Header>
         <p>{caligraphy.description}</p>
         <h3>$ {caligraphy.price}</h3>
-        <Link to='/inquire'>
+        <Link to='/shai-inquire'>
         <Button animated='fade' size='massive' attached='bottom'>
             <Button.Content visible>Click Here To Inquire</Button.Content>
             <Button.Content hidden>
