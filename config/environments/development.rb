@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.routes.default_url_options = {
-  host: 'http://localhost:3000'
+  host: 'https://powerful-taiga-51704.herokuapp.com/'
 }
 
 Rails.application.configure do
